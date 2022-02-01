@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".GameFragment"
+    android:background="@color/white">
+
+    <data>
+
+        <variable
+            name="gameFragment"
+            type="com.example.openitall.GameFragment" />
+        <variable
+            name="viewModel"
+            type="com.example.openitall.GameViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/level(viewModel.level)}"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Level" />
+
+        <ImageButton
+            android:id="@+id/first_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="@dimen/left_margin_tile"
+            android:background="@drawable/cards_background"
+            android:cropToPadding="true"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[0])}"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/second_tile" />
+
+        <ImageButton
+            android:id="@+id/second_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/cards_background"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[1])}"
+            app:layout_constraintStart_toEndOf="@+id/first_tile"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <ImageButton
+            android:id="@+id/third_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/cards_background"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[2])}"
+            app:layout_constraintStart_toEndOf="@+id/second_tile"
+            app:layout_constraintTop_toTopOf="@+id/second_tile" />
+
+        <ImageButton
+            android:id="@+id/forth_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="@dimen/left_margin_tile"
+            android:background="@drawable/cards_background"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[3])}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/second_tile" />
+
+        <ImageButton
+            android:id="@+id/fifth_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/cards_background"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[4])}"
+            app:layout_constraintStart_toEndOf="@+id/forth_tile"
+            app:layout_constraintTop_toBottomOf="@+id/second_tile" />
+
+        <ImageButton
+            android:id="@+id/sixth_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/cards_background"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[5])}"
+            app:layout_constraintStart_toEndOf="@+id/fifth_tile"
+            app:layout_constraintTop_toBottomOf="@+id/second_tile" />
+
+        <ImageButton
+            android:id="@+id/seventh_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="@dimen/left_margin_tile"
+            android:background="@drawable/cards_background"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[6])}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fifth_tile" />
+
+        <ImageButton
+            android:id="@+id/eighth_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/cards_background"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[7])}"
+            app:layout_constraintStart_toEndOf="@+id/seventh_tile"
+            app:layout_constraintTop_toBottomOf="@+id/fifth_tile" />
+
+        <ImageButton
+            android:id="@+id/ninth_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/cards_background"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[8])}"
+            app:layout_constraintStart_toEndOf="@+id/eighth_tile"
+            app:layout_constraintTop_toBottomOf="@+id/sixth_tile" />
+
+        <ImageButton
+            android:id="@+id/tenth_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="@dimen/left_margin_tile"
+            android:background="@drawable/cards_background"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[9])}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eighth_tile" />
+
+        <ImageButton
+            android:id="@+id/eleventh_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/cards_background"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[10])}"
+            app:layout_constraintStart_toEndOf="@+id/seventh_tile"
+            app:layout_constraintTop_toBottomOf="@+id/eighth_tile" />
+
+        <ImageButton
+            android:id="@+id/twelfth_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/cards_background"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[11])}"
+            app:layout_constraintStart_toEndOf="@+id/eighth_tile"
+            app:layout_constraintTop_toBottomOf="@+id/ninth_tile" />
+
+        <ImageButton
+            android:id="@+id/thirteenth_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="@dimen/left_margin_tile"
+            android:background="@drawable/cards_background"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[12])}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eleventh_tile" />
+
+        <ImageButton
+            android:id="@+id/fourteenth_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/cards_background"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[13])}"
+            app:layout_constraintStart_toEndOf="@+id/seventh_tile"
+            app:layout_constraintTop_toBottomOf="@+id/eleventh_tile" />
+
+        <ImageButton
+            android:id="@+id/fifteenth_tile"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/cards_background"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:onClick="@{() -> gameFragment.tileClickEvent(viewModel.tiles[14])}"
+            app:layout_constraintStart_toEndOf="@+id/eighth_tile"
+            app:layout_constraintTop_toBottomOf="@+id/twelfth_tile" />
+
+        <Button
+            android:id="@+id/return_to_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/return_to_main_menu"
+            android:onClick="@{() -> gameFragment.returnToMainFragment()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/cheat"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:background="@android:color/transparent"
+            android:onClick="@{() -> gameFragment.showBoard()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
